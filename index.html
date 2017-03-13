@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja" xml:lang="ja">
+<head>
+	<meta http-equiv="Content-Type" content="application/xhtml+xml; charset=UTF-8" />
+	<meta http-equiv="Content-Script-Type" content="text/javascript" />
+	<meta name="robots" content="index,follow" />
+	<meta name="author" content="woonie" />
+	<link rel="icon" 
+      type="image/icon" 
+      href="./images/favicon.ico">
+<title>
+Karuta Flashcards &#12363;&#12427;&#12383;&#26263;&#35352;
+</title>
+</head>
+<body>
+
+<h1 id="hello-world">Karuta Flashcards &#12363;&#12427;&#12383;&#26263;&#35352;</h1> (fuda images by <a href="http://karuta.org"><img src="./images/banner2.png" /></a>)
+<p id="choose">
+	<input type="checkbox" id="all">all
+	<input type="checkbox" id="one">&#12416;&#12377;&#12417;&#12405;&#12373;&#12411;&#12379; 
+	<input type="checkbox" id="two">&#12358;&#12388;&#12375;&#12418;&#12422;<br/>
+	<input type="checkbox" id="i">&#12356; 
+	<input type="checkbox" id="chi">&#12385; 
+	<input type="checkbox" id="hi">&#12402; 
+	<input type="checkbox" id="ki">&#12365;
+	<input type="checkbox" id="ha">&#12399; 
+	<input type="checkbox" id="ya">&#12420; 
+	<input type="checkbox" id="ka">&#12363;
+	<input type="checkbox" id="yo">&#12424;<br/>
+	<input type="checkbox" id="mi">&#12415;
+	<input type="checkbox" id="ta">&#12383;
+	<input type="checkbox" id="ko">&#12371;
+	<input type="checkbox" id="wa">&#12431;
+	<input type="checkbox" id="o">&#12362;
+	<input type="checkbox" id="na">&#12394;
+	<input type="checkbox" id="a">&#12354;<br/>
+	<input type="checkbox" id="bookmark">Custom List
+	<!-- <input type="checkbox" id="bookmark1">myList -->
+	
+</p>
+
+<p>
+<input type="button" onclick="test()" value="generate">
+<input type="button" onclick="revealAnswer()" value="answer">
+<input type="button" onClick="back()" value="back">
+<input type="button" onclick="reset()" value="reset">
+<br/>
+Custom List: <input type="button" onClick="addCard()" value="add">
+<input type="button" onClick="removeCard()" value="remove">
+<input type="button" id="showlist" onClick="showSaved()" value="show">
+<text id = "customList"></text>
+
+</p>
+<p>
+<text id = "questionNumber"></text>
+<text id = "cardValue"></text>
+<text id = "ans"></text>
+<text id = "endOfQuiz"></text>
+</p>
+<img id= "fuda" />
+
+<script type="text/javascript" src="karuta.js">
+</script>
+</body>
+</html>
