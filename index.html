@@ -6,12 +6,8 @@
 	<meta name="robots" content="index,follow" />
 	<meta name="author" content="woonie" />
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
-
-
-	<link rel="icon" 
-      type="image/icon" 
-      href="./images/favicon.ico">
+	<link rel="stylesheet" href="./karuta.css">
+	<link rel="icon" type="image/icon" href="./images/favicon.ico">
 <title>
 Karuta Flashcards &#12363;&#12427;&#12383;&#26263;&#35352;
 </title>
@@ -39,7 +35,6 @@ Karuta Flashcards &#12363;&#12427;&#12383;&#26263;&#35352;
 	<input type="checkbox" class = "notAll" id="na">&#12394;
 	<input type="checkbox" class = "notAll" id="a">&#12354;<br/>
 	<input type="checkbox" class = "notAll" id="bookmark">Custom List
-	<!-- <input type="checkbox" id="bookmark1">myList -->
 	
 </p>
 
@@ -51,21 +46,25 @@ Karuta Flashcards &#12363;&#12427;&#12383;&#26263;&#35352;
 </p>
 <p>
 <text id = "questionNumber"></text>
-<text id = "cardValue">Press 'reset' button to start quiz.</text>
+<text id = "cardValue"></text>
 <text id = "ans"></text>
 <text id = "endOfQuiz"></text>
 </p>
 <img id= "fuda" />
 <p>
-	Custom List: <input type="button" onClick="addCard()" value="add">
-	<input type="button" onClick="removeCard()" value="remove">
-	<input type="button" id="showlist" onClick="showSaved()" value="show">
+	Custom List: <input type="button" onClick="addCard()" value="add current card">
+	<input type="button" onClick="removeCard()" value="remove current card">
+	<input type="button" id="showlist" onClick="showSaved()" value="show/hide list"><br/>
 	<text id = "customList"></text>
+	<br/>
+	<text id = "customListMessage"> </text>
+	<br/>
 </p>
-<p>
-(fuda images by <a href="http://karuta.org"><img src="./images/banner2.png" /></a>)
+<p class = "footer">
+(fuda images by <a href="http://karuta.org"><img src="./images/banner2.png" /></a>)<br/>
+created by woonie &copy;2013-2018
 </p>
-<p>created by woonie &copy;2014-2018</p>
+
 <script type="text/javascript" src="karuta.js"></script>
 
 </body>

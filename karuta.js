@@ -137,8 +137,7 @@ function printArray(myArray){
 		output = output + answer[parseInt(foo)-1];
 	}
 	output = output + ")";
-	console.log(output);
-	return output
+	return output;
 }
 function revealAnswer(){
 	var temp = document.getElementById('cardValue').innerHTML;
@@ -185,6 +184,9 @@ function resetDisplay(count, value){
 }
 function endOfTestTimeout (){
 	document.getElementById('endOfQuiz').innerHTML = "";
+}
+function customListMessageTimeout(){
+	document.getElementById('customListMessage').innerHTML = " ";
 }
 function test(){
 	if (histCount == 0){
@@ -233,11 +235,9 @@ function back(){
 var selection = ["one", "two","i","chi","hi","ki","ha","ya","ka","yo", "mi","ta","ko","wa","o","na","a"];
 function chooseQuestion(){
 	if (document.getElementById("all").checked){
-		console.log("all true");
 		return createRange(1,100);
 	}
 	if (document.getElementById("bookmark").checked){
-		console.log("bookmark");
 		return createList(bookmark);
 	}
 	var foo = [];
@@ -261,36 +261,41 @@ function addCard(){
 		return
 	}
 	var idx = bookmark.indexOf(temp);
-	console.log("idx: "+idx);
-	if (idx == -1){
+	if (idx == -1){ //card not already in list, proceed to add card
 		bookmark.push(temp);
 		if (show){
 			document.getElementById('customList').innerHTML = printArray(bookmark);
 		}
+		document.getElementById('customListMessage').innerHTML = " card added to custom list";
+		setTimeout(customListMessageTimeout, 2000);
+	} else{
+		document.getElementById('customListMessage').innerHTML = " card already in custom list";
+		setTimeout(customListMessageTimeout, 2000);
 	}
-	console.log(bookmark);
 }
 function removeCard(){
 	var temp = document.getElementById('cardValue').innerHTML;
 	temp = temp.substring(temp.indexOf("#")+1);
 	var idx = bookmark.indexOf(temp);
-	if (idx > -1){
+	if (idx > -1){ //card is in list, proceed to remove card
 		bookmark.splice(idx, 1);
 		if (show){
 			document.getElementById('customList').innerHTML = printArray(bookmark);
 		}
+		document.getElementById('customListMessage').innerHTML = " card removed from custom list";
+		setTimeout(customListMessageTimeout, 1000);
+	} else{
+		document.getElementById('customListMessage').innerHTML = " card not in custom list";
+		setTimeout(customListMessageTimeout, 1000);
 	}
-	console.log(bookmark);
 }
 function showSaved(){
 	if (!show){
 		document.getElementById('customList').innerHTML = printArray(bookmark);
-		document.getElementById('showlist').value = "hide";
 		show = true;
 
 	} else{
 		document.getElementById('customList').innerHTML = "";
-		document.getElementById('showlist').value = "show";
 		show = false;
 	}
 }
@@ -304,3 +309,5 @@ $('input.notAll').on('change', function(){
 $('input#bookmark').on('change', function(){
 	$('input.notAll').not(this).prop('checked', false);
 })
+
+reset()
