@@ -8,7 +8,7 @@ All 100 cards are included by default when the page is initially loaded.
 
 To filter the card list, check the checkboxes of the corresponding first syllable of the *kimari-ji* of the cards you want to practise with, and click on the 'reset' button.
 
-Click on the 'reveal answer' button to see the *kimari-ji* of the current displayed card, 
+Click on the 'reveal answer' button to see the *kimari-ji* of the current displayed card. 
 
 Click on the 'next card' button to go to the next card. 
 
