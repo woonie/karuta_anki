@@ -162,7 +162,7 @@ function createList(myArray){
 	}
 	return foo;
 }
-function range(start, end) {
+function createRange(start, end) {
     var foo = [];
     for (var i = start; i <= end; i++) {
     	var v = convertstring(i);
@@ -172,7 +172,7 @@ function range(start, end) {
 }
 var bookmark = [];
 var historyArray = [];
-var remainingCards = range(1,100);
+var remainingCards = createRange(1,100);
 var count = 0;
 var histCount = 0;
 var show = false;
@@ -196,7 +196,7 @@ function test(){
 			resetDisplay(count, value);
 		} else{
 			document.getElementById('endOfQuiz').innerHTML = " end of card list";
-			setTimeout(endOfTestTimeout, 500);
+			setTimeout(endOfTestTimeout, 2000);
 		}
 	} else{ // user has used back button
 		histCount++;
@@ -206,11 +206,18 @@ function test(){
 	}
 }
 function reset(){
-	remainingCards = chooseQuestion();
-	count = 0;
-	histCount = 0;
-	historyArray = [];
-	test();
+	var tempRemainingCards = chooseQuestion();
+	if (tempRemainingCards.length < 1){
+		document.getElementById('endOfQuiz').innerHTML = " no cards in custom list";
+		setTimeout(endOfTestTimeout, 2000);
+	} else{
+		remainingCards = tempRemainingCards;
+		count = 0;
+		histCount = 0;
+		historyArray = [];
+		test();
+	}
+
 	
 }
 function back(){
@@ -227,7 +234,7 @@ var selection = ["one", "two","i","chi","hi","ki","ha","ya","ka","yo", "mi","ta"
 function chooseQuestion(){
 	if (document.getElementById("all").checked){
 		console.log("all true");
-		return range(1,100);
+		return createRange(1,100);
 	}
 	if (document.getElementById("bookmark").checked){
 		console.log("bookmark");
@@ -242,7 +249,7 @@ function chooseQuestion(){
 
 	}
 	if (foo.length == 0){
-		return range(1,100);
+		return createRange(1,100);
 	} else{
 		return foo;
 	}
@@ -279,11 +286,21 @@ function showSaved(){
 	if (!show){
 		document.getElementById('customList').innerHTML = printArray(bookmark);
 		document.getElementById('showlist').value = "hide";
-		show = true
+		show = true;
 
 	} else{
 		document.getElementById('customList').innerHTML = "";
 		document.getElementById('showlist').value = "show";
-		show = false
+		show = false;
 	}
 }
+$('input.all').on('change', function(){
+	$('input.notAll').prop('checked', false);
+});
+$('input.notAll').on('change', function(){
+	$('input.all').prop('checked', false);
+	$('input#bookmark').not(this).prop('checked', false);
+});
+$('input#bookmark').on('change', function(){
+	$('input.notAll').not(this).prop('checked', false);
+})

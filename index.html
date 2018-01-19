@@ -5,6 +5,10 @@
 	<meta http-equiv="Content-Script-Type" content="text/javascript" />
 	<meta name="robots" content="index,follow" />
 	<meta name="author" content="woonie" />
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+
 	<link rel="icon" 
       type="image/icon" 
       href="./images/favicon.ico">
@@ -14,52 +18,55 @@ Karuta Flashcards &#12363;&#12427;&#12383;&#26263;&#35352;
 </head>
 <body>
 
-<h1 id="hello-world">Karuta Flashcards &#12363;&#12427;&#12383;&#26263;&#35352;</h1> (fuda images by <a href="http://karuta.org"><img src="./images/banner2.png" /></a>)
+<h1 id="hello-world">Karuta Flashcards &#12363;&#12427;&#12383;&#26263;&#35352;</h1> 
 <p id="choose">
-	<input type="checkbox" id="all">all
-	<input type="checkbox" id="one">&#12416;&#12377;&#12417;&#12405;&#12373;&#12411;&#12379; 
-	<input type="checkbox" id="two">&#12358;&#12388;&#12375;&#12418;&#12422;<br/>
-	<input type="checkbox" id="i">&#12356; 
-	<input type="checkbox" id="chi">&#12385; 
-	<input type="checkbox" id="hi">&#12402; 
-	<input type="checkbox" id="ki">&#12365;
-	<input type="checkbox" id="ha">&#12399; 
-	<input type="checkbox" id="ya">&#12420; 
-	<input type="checkbox" id="ka">&#12363;
-	<input type="checkbox" id="yo">&#12424;<br/>
-	<input type="checkbox" id="mi">&#12415;
-	<input type="checkbox" id="ta">&#12383;
-	<input type="checkbox" id="ko">&#12371;
-	<input type="checkbox" id="wa">&#12431;
-	<input type="checkbox" id="o">&#12362;
-	<input type="checkbox" id="na">&#12394;
-	<input type="checkbox" id="a">&#12354;<br/>
-	<input type="checkbox" id="bookmark">Custom List
+	<input type="checkbox" class = "all" id="all" checked>all<br/>
+	<input type="checkbox" class = "notAll" id="one">&#12416;&#12377;&#12417;&#12405;&#12373;&#12411;&#12379; 
+	<input type="checkbox" class = "notAll" id="two">&#12358;&#12388;&#12375;&#12418;&#12422;<br/>
+	<input type="checkbox" class = "notAll" id="i">&#12356; 
+	<input type="checkbox" class = "notAll" id="chi">&#12385; 
+	<input type="checkbox" class = "notAll" id="hi">&#12402; 
+	<input type="checkbox" class = "notAll" id="ki">&#12365;<br/>
+	<input type="checkbox" class = "notAll" id="ha">&#12399; 
+	<input type="checkbox" class = "notAll" id="ya">&#12420; 
+	<input type="checkbox" class = "notAll" id="ka">&#12363;
+	<input type="checkbox" class = "notAll" id="yo">&#12424;<br/>
+	<input type="checkbox" class = "notAll" id="mi">&#12415;
+	<input type="checkbox" class = "notAll" id="ta">&#12383;
+	<input type="checkbox" class = "notAll" id="ko">&#12371;
+	<input type="checkbox" class = "notAll" id="wa">&#12431;
+	<input type="checkbox" class = "notAll" id="o">&#12362;
+	<input type="checkbox" class = "notAll" id="na">&#12394;
+	<input type="checkbox" class = "notAll" id="a">&#12354;<br/>
+	<input type="checkbox" class = "notAll" id="bookmark">Custom List
 	<!-- <input type="checkbox" id="bookmark1">myList -->
 	
 </p>
 
 <p>
-<input type="button" onclick="test()" value="generate">
-<input type="button" onclick="revealAnswer()" value="answer">
-<input type="button" onClick="back()" value="back">
+<input type="button" onclick="test()" value="next card">
+<input type="button" onclick="revealAnswer()" value="reveal answer">
+<input type="button" onClick="back()" value="previous card">
 <input type="button" onclick="reset()" value="reset">
-<br/>
-Custom List: <input type="button" onClick="addCard()" value="add">
-<input type="button" onClick="removeCard()" value="remove">
-<input type="button" id="showlist" onClick="showSaved()" value="show">
-<text id = "customList"></text>
-
 </p>
 <p>
 <text id = "questionNumber"></text>
-<text id = "cardValue"></text>
+<text id = "cardValue">Press 'reset' button to start quiz.</text>
 <text id = "ans"></text>
 <text id = "endOfQuiz"></text>
 </p>
 <img id= "fuda" />
+<p>
+	Custom List: <input type="button" onClick="addCard()" value="add">
+	<input type="button" onClick="removeCard()" value="remove">
+	<input type="button" id="showlist" onClick="showSaved()" value="show">
+	<text id = "customList"></text>
+</p>
+<p>
+(fuda images by <a href="http://karuta.org"><img src="./images/banner2.png" /></a>)
+</p>
+<p>created by woonie &copy;2014-2018</p>
+<script type="text/javascript" src="karuta.js"></script>
 
-<script type="text/javascript" src="karuta.js">
-</script>
 </body>
 </html>
