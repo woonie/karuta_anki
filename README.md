@@ -28,9 +28,10 @@ Click on the 'remove current card' button to remove the currently displayed card
 
 Click on 'show/hide list' to toggle the display of the current custom list.
 
-#Acknowledgements
+# Acknowledgements
 Fuda images are obtained from [www.karuta.org](http://www.karuta.org). 
 In fact, this site has lots of very useful information about the game of competitive karuta, particularly 
 * [how to memorize the cards](http://www.karuta.org/practice/learn.html)
 * a much better interface for memorizing the cards: [#1](http://www.karuta.org/practice/nagashi.html), [#2](http://www.karuta.org/practice/seek.html)
 * etc.
+It's where I got most of the help I needed to memorize all 100 cards and getting better at the game. 
